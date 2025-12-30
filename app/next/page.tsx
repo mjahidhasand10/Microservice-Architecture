@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const MicroservicesArchitecture = () => {
-  const [selectedService, setSelectedService] = useState(null);
-  const [activeLayer, setActiveLayer] = useState(null);
+  const [selectedService, setSelectedService] = useState<{ id: string; name: string; color: string; desc: string; port: string; } | null>(null);
+  const [activeLayer, setActiveLayer] = useState<string | null>(null);
 
   // Core microservices - typical enterprise setup
   const services = [

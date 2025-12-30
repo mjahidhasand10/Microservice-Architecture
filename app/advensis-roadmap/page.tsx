@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const AdvensisRoadmapPresentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [expandedSection, setExpandedSection] = useState(null);
+  const [expandedSection, setExpandedSection] = useState<string | number | null>(null);
 
   const team = [
     { name: 'Tamim', role: 'Lead Architect', avatar: '👨‍💻', responsibilities: ['Requirement Analysis', 'Database Design', 'Features Design', 'Mock', 'Backend Architecture', 'Complex Business Logic', 'Infrastructure Management'], color: '#8B5CF6' },

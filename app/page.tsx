@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 
 const EnterpriseArchitecture = () => {
-  const [selectedLayer, setSelectedLayer] = useState(null);
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedLayer, setSelectedLayer] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<{ id: string; name: string; namespace: string; port: string; mcp: boolean; } | null>(null);
   const [viewMode, setViewMode] = useState('full'); // full, flow, agents
 
   const layers = [
@@ -47,7 +47,7 @@ const EnterpriseArchitecture = () => {
     { id: 'knowledge', name: 'Knowledge Agent', color: '#14B8A6', connections: [] },
   ];
 
-  const getOpacity = (layerId) => {
+  const getOpacity = (layerId: string) => {
     if (!selectedLayer) return 1;
     return selectedLayer === layerId ? 1 : 0.4;
   };
